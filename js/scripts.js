@@ -1,3 +1,5 @@
+const isDebug = true;
+
 const pane = document.getElementById('pane');
 
 let dimension = 4;
@@ -25,3 +27,7 @@ cells.forEach(cell => {
       cell.style.setProperty('background-color', 'green');
     })
 });
+function debugLog(str) {
+  if (!isDebug) return;
+  console.log(str);
+}
