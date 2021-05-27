@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#content {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pane {
+  width: 60vmin;
+  height: 60vmin;
+  background-color: black;
+  display: grid;
+  grid-gap: 1px;
+}
+
+#pane > div {
+  background: pink;
+}
