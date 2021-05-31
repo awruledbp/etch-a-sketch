@@ -6,6 +6,7 @@
 #content {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -16,6 +17,7 @@
   background-color: black;
   display: grid;
   grid-gap: 1px;
+  border: 1px solid black;
 }
 
 #pane > div {
