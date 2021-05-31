@@ -6,6 +6,7 @@ const cells = document.getElementsByClassName('cell');
 const smallGridBtn = document.getElementById('small-grid');
 const mediumGridBtn = document.getElementById('medium-grid');
 const bigGridBtn = document.getElementById('big-grid');
+const clearGridBtn = document.getElementById('clear-grid');
 
 const backgroundColor = 'pink';
 
@@ -26,6 +27,11 @@ mediumGridBtn.addEventListener('click', _ => {
 bigGridBtn.addEventListener('click', _ => {
   debugLog('big-grid < 32 >');
   prepareGrid(32);
+});
+
+clearGridBtn.addEventListener('click', _ => {
+  debugLog('clear grid');
+  clearGrid();
 });
 
 function setGridTemplates(dimension) {
@@ -58,6 +64,11 @@ function prepareGrid(dimension) {
   setMouseoverListeners();
 }
 
+function clearGrid() {
+  Array.from(cells).forEach(cell => {
+    cell.style.setProperty('background-color', backgroundColor);
+  })
+}
 function debugLog(str) {
   if (!isDebug) return;
   console.log(str);
