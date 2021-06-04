@@ -3,19 +3,35 @@ const isDebug = true;
 const pane = document.getElementById('pane');
 const cells = document.getElementsByClassName('cell');
 
+const customGridInput = document.getElementById('custom-grid-text');
+const customGridBtn = document.getElementById('custom-grid-button');
+
 const smallGridBtn = document.getElementById('small-grid');
 const mediumGridBtn = document.getElementById('medium-grid');
 const bigGridBtn = document.getElementById('big-grid');
 const clearGridBtn = document.getElementById('clear-grid');
 
-const gradeColor = document.getElementById('step-opacity-brush');
+const gradualBrush = document.getElementById('step-opacity-brush');
 const regularBrush = document.getElementById('regular-brush');
 const rainbowBrush = document.getElementById('rainbow-brush');
 const backgroundColor = 'pink';
 
-const brushes = { REGULAR: 'regular', GRADE: 'grade', RAINBOW: 'rainbow' };
+const brushes = { REGULAR: 'regular', GRADUAL: 'gradual', RAINBOW: 'rainbow' };
 
 let dimension = 8;
+
+customGridBtn.addEventListener('click', _ => {
+  let errorMessage = "You could only input numbers from 1 to 100!";
+  let value = Number.parseInt(customGridInput.value);
+  if (Number.isNaN(value)) {
+    alert(errorMessage);
+  } else if (value > 100) {
+    alert(errorMessage);
+  } else {
+    debugLog(`button => custom-grid < ${value} >`);
+    prepareGrid(value);
+  }
+});
 
 smallGridBtn.addEventListener('click', _ => {
   debugLog('button => small-grid < 8 >');
@@ -57,8 +73,8 @@ rainbowBrush.addEventListener('click', _ => {
 
 function setGridTemplates(dimension) {
   debugLog(`grid dimension is < ${dimension}x${dimension} >`);
-  pane.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
-  pane.style.gridTemplateRows = `repeat(${dimension}, 1fr)`;
+  let templateValue = `1.1fr repeat(${dimension-2}, 1fr) 1.1fr`;
+  pane.style.gridTemplate = `${templateValue} / ${templateValue}`;
 }
 
 let listenerHandler = null;
@@ -79,8 +95,8 @@ function setBrushType(cell, brushType) {
   if (brushType == brushes.REGULAR) {
     debugLog('default brush');
     cell.style.backgroundColor = 'green';
-  } else if (brushType == brushes.GRADE) {
-    debugLog('grade brush');
+  } else if (brushType == brushes.GRADUAL) {
+    debugLog('gradual brush');
     cell.style.backgroundColor = `hsl(0, 0%, ${cell.dataset.lightness}%)`;
     if (cell.dataset.lightness > 50) {
       cell.dataset.lightness -= 5;
@@ -120,7 +136,9 @@ function clearGrid() {
 }
 
 function debugLog(str) {
-  if (!isDebug) return;
+  if (!isDebug) {
+    return;
+  }
   console.log(str);
 }
 
