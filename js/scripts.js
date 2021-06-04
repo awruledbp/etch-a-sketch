@@ -59,10 +59,10 @@ regularBrush.addEventListener('click', _ => {
   addMouseoverListener(brushes.REGULAR);
 })
 
-gradeColor.addEventListener('click', _ => {
-  debugLog('button => grade brush chosen');
+gradualBrush.addEventListener('click', _ => {
+  debugLog('button => gradual brush chosen');
   removeMouseoverListener();
-  addMouseoverListener(brushes.GRADE);
+  addMouseoverListener(brushes.GRADUAL);
 })
 
 rainbowBrush.addEventListener('click', _ => {
