@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -11,6 +13,14 @@
   align-items: center;
 }
 
+#header {
+  color: white;
+  margin: 3vmin 0 3vmin 0;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Roboto', sans-serif;
+}
+
 #pane {
   width: 60vmin;
   height: 60vmin;
@@ -22,4 +32,13 @@
 
 #pane > div {
   background-color: pink;
+
+#footer {
+  margin-top: 3vmin;
+}
+
+#footer a {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: underline;
 }
