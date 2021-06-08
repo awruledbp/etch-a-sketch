@@ -11,14 +11,14 @@ const mediumGridBtn = document.getElementById('medium-grid');
 const bigGridBtn = document.getElementById('big-grid');
 const clearGridBtn = document.getElementById('clear-grid');
 
-const gradualBrush = document.getElementById('step-opacity-brush');
+const gradualBrush = document.getElementById('gradual-brush');
 const regularBrush = document.getElementById('regular-brush');
 const rainbowBrush = document.getElementById('rainbow-brush');
 const backgroundColor = 'pink';
 
 const brushes = { REGULAR: 'regular', GRADUAL: 'gradual', RAINBOW: 'rainbow' };
 
-let dimension = 8;
+let dimension = 16;
 
 customGridBtn.addEventListener('click', _ => {
   let errorMessage = "You could only input numbers from 1 to 100!";
@@ -34,18 +34,18 @@ customGridBtn.addEventListener('click', _ => {
 });
 
 smallGridBtn.addEventListener('click', _ => {
-  debugLog('button => small-grid < 8 >');
-  prepareGrid(8);
-});
-
-mediumGridBtn.addEventListener('click', _ => {
-  debugLog('button => medium-grid < 16 >');
+  debugLog('button => small-grid < 16 >');
   prepareGrid(16);
 });
 
-bigGridBtn.addEventListener('click', _ => {
-  debugLog('button => big-grid < 32 >');
+mediumGridBtn.addEventListener('click', _ => {
+  debugLog('button => medium-grid < 32 >');
   prepareGrid(32);
+});
+
+bigGridBtn.addEventListener('click', _ => {
+  debugLog('button => big-grid < 64 >');
+  prepareGrid(64);
 });
 
 clearGridBtn.addEventListener('click', _ => {
