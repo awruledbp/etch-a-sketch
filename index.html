@@ -15,23 +15,39 @@
 
 <body>
   <div id="content">
-    <div id="controls">
-      <button id="small-grid">Yoba</button>
-      <button id="medium-grid">Boba</button>
-      <button id="big-grid">Goba</button>
+    <div id="header">Etch-a-sketch</div>
+    <div id="grid">
+      <div id="controls-container">
+        <div>
+          <div class="controls-flex">
+            <button id="small-grid">Small grid</button>
+            <button id="medium-grid">Medium grid</button>
+            <button id="big-grid">Big grid</button>
 
-      <input id="custom-grid-text" type="text" minlenght="1" maxlength="3">
-      <button id="custom-grid-button">Custom</button>
-
-      <button id="clear-grid">Clear</button>
-
-      <button id="regular-brush">Regular</button>
-      <button id="step-opacity-brush">Gradual alpha</button>
-      <button id="rainbow-brush">Rainbow</button>
-      <button id="remove-all">Remove</button>
+            <div id="custom-grid-controls">
+              <input id="custom-grid-text" size="2" type="text" minlenght="1" maxlength="3">
+              <button id="custom-grid-button">Custom</button>
+            </div>
+            <hr>
+          </div>
+          <div class="controls-flex">
+            <button id="regular-brush">Regular brush</button>
+            <button id="gradual-brush">Gradual brush</button>
+            <button id="rainbow-brush">Rainbow brush</button>
+            <hr>
+          </div>
+          <div class="controls-flex">
+            <button id="clear-grid">Clear</button>
+          </div>
+        </div>
+      </div>
+      <div id="pane-container">
+        <div id="pane">
+        </div>
+      </div>
     </div>
-    <div id="pane">
-    </div>
+    <div id="footer"><a href="https://github.com/awruledbp/etch-a-sketch" target="_blank">Sources</a></div>
   </div>
 </body>
+
 </html>
