@@ -35,7 +35,7 @@ body {
 #controls-container {
   display: flex;
   flex-direction: column;
-  flex-grow: 1.5;
+  flex-grow: 1.53;
   justify-content: center;
   align-items: flex-end;
   margin-right: 2vmin;
@@ -55,12 +55,20 @@ body {
 #controls-container button {
   background-color: #92817A;
   color: white;
-  margin: 0.3vmin;
+  margin: 0.4vmin;
   padding: 0.5vmin 2vmin;
   border: none;
   border-radius: 0.4vmin;
   font-size: 1rem;
   font-family: 'Roboto', sans-serif;
+}
+
+#controls-container button:active {
+  transform: translateY(1px);
+}
+
+#controls-container button.selected{
+  box-shadow: 0px 0px 3px 1px white;
 }
 
 #custom-grid-controls {
@@ -70,7 +78,7 @@ body {
 
 #custom-grid-controls input {
   flex-grow: 1;
-  margin: 0.3vmin;
+  margin: 0.4vmin;
   border: none;
   border-radius: 0.4vmin;
   text-align: center;
