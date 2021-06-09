@@ -1,4 +1,4 @@
-const isDebug = true;
+let isDebug = false;
 
 const pane = document.getElementById('pane');
 const cells = document.getElementsByClassName('cell');
@@ -9,7 +9,6 @@ const customGridBtn = document.getElementById('custom-grid-button');
 const smallGridBtn = document.getElementById('small-grid');
 const mediumGridBtn = document.getElementById('medium-grid');
 const bigGridBtn = document.getElementById('big-grid');
-const clearGridBtn = document.getElementById('clear-grid');
 
 const gradualBrush = document.getElementById('gradual-brush');
 const regularBrush = document.getElementById('regular-brush');
